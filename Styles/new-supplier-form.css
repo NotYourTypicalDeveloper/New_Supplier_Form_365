@@ -1,0 +1,80 @@
+html {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0px;
+    font-size: 13px;
+}
+
+
+/* Header */
+
+header {
+    background-color: #0E1E24;
+    padding-top: 4em;
+}
+
+header>h1 {
+    color: #dee2e6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.disclaimer {
+    background-color: #054861;
+    color: silver;
+    border-radius: 10px;
+    padding: 2em;
+    position: relative;
+    top: 3em;
+}
+
+.disclaimer>p:nth-child(4) {
+    color: red;
+}
+
+/* __________STYLING OF THE SUPPLIER FORM __________ */
+
+
+#form-ctnr {
+    position: relative;
+    top: 7em;
+    padding-left: 0;
+    padding-right: 0;
+
+}
+
+
+/* sub-titles banners */
+.h2-banner {
+    background: -webkit-gradient(linear, left top, right top, from(#163058), to(#89dce9));
+    background: linear-gradient(90deg, #163058 0%, #89dce9 100%);
+    color: white;
+    padding: 0.5em;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin: 0.8em 0.3em;
+}
+
+
+label {
+    font-weight: bold;
+}
+
+/* supplier extender form */
+#supplier-extender-form {
+    border: 1px solid #89dce9;
+}
+
+table td {
+    border: solid 1px #054861;
+}
+
+#employeeDetails tr:nth-child(odd) {
+    background-color: #e5fafd;
+}

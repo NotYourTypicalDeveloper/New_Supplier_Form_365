@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Supplier Form</title>
+
+  <!-- TODO: uncomment these links -->
+  <!-- tab icon -->
+  <!-- <link rel="shortcut icon" href="/sites/UK-Forms/Finance/SiteAssets/Images/favicon.ico"> -->
+
+  <!-- Font Awesome CSS -->
+  <!-- <link rel="stylesheet" href="/sites/UK-Forms/Finance/SiteAssets/FontAwesomeCSS/fontawesome.css" -->
+  <!-- type="text/css"> -->
+  <!-- <link rel="stylesheet" href="/sites/UK-Forms/Finance/SiteAssets/FontAwesomeCSS/solid.css" type="text/css"> -->
+
+  <!-- Bootstrap css -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" -->
+  <!-- integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+
+  <!-- our external css stylesheets -->
+  <!-- <link rel="stylesheet" href="/sites/UK-Forms/Finance/SiteAssets/Styles/new-supplier-form.css" type="text/css" /> -->
+
+  <!-- tab icon -->
+  <!-- <link rel="shortcut icon" href="/sites/UK-Forms/Finance/SiteAssets/Images/favicon.ico"> -->
+
+
+  <!-- TODO: to remove when we deploy -->
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="./FontAwesomeCSS/fontawesome.css" type="text/css">
+  <link rel="stylesheet" href="./FontAwesomeCSS/solid.css" type="text/css">
+
+  <!-- Bootstrap css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- our external css stylesheets -->
+  <link rel="stylesheet" href="./Styles/new-supplier-form.css" type="text/css" />
+
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>New Supplier / Contributor > Request Form </h1>
+
+    <div class="disclaimer container">
+      <p>Prior to completing this form, use this search button to check if the supplier or contributor exists in
+        Proactis already -
+        <button id="supplier-search-btn" class="btn btn-info">Supplier Search </button>
+      </p>
+
+      <p>Complete this form in order to request the creation of a new supplier or contributor in Proactis. This will
+        allow you to raise PO's and pay them in a timely manner.
+        All suppliers are paid by BACS, so please ensure bank details below are complete and accurate.</p>
+      <p>The supplier account will be set up with a standard payment term of 30 days, unless a copy of a signed contract
+        is emailed to BCS separately.
+      </p>
+      <p>* Denotes a mandatory field and must be completed. </p>
+
+    </div>
+
+  </header>
+
+  <div id="form-ctnr" class="container">
+    <form id="newsupp-form">
+      <!-- ========================================= "User Details" SECTION ============================================    -->
+      <h2 class="h2-banner"> User Details </h2>
+
+      <section id="user-details" class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6">
+
+
+          <!-- Employee Name -->
+          <div>
+            <div class="form-group col">
+              <label>Your Name*</label>
+              <input id="typeAhead" class="form-control" name="employee_name" type="text" placeholder="Type name" />
+            </div>
+          </div>
+
+          <!-- add error message -->
+
+          <!-- Company code -->
+          <div>
+            <div class="form-group col">
+              <label>Company Code</label>
+              <select id="company-code" class="form-control">
+                <option selected="selected" value="">Please Select...</option>
+                <option>Choice 1</option>
+                <option>Choice 2</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Supplier request reviewer -->
+          <div>
+            <div class="form-group col">
+              <label>Supplier request reviewer</label>
+              <select id="reviewer-input" class="form-control">
+                <option selected="selected" value="">Please Select...</option>
+                <option>Choice 1</option>
+                <option>Choice 2</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Employees details will populate after user typed his name -->
+        <div class=" col-lg-6 col-md-6 col-sm-6">
+
+          <table id="employeeDetails" class="table table-bordered ">
+            <tbody>
+              <tr>
+                <td style="width: 120px;">Division</td>
+                <td id="emp-division"></td>
+              </tr>
+              <tr>
+                <td>Manager</td>
+                <td id="emp-manager"></td>
+              </tr>
+              <tr>
+                <td>Office</td>
+                <td id="emp-office"></td>
+              </tr>
+              <tr>
+                <td>Phone</td>
+                <td id="emp-phone"></td>
+              </tr>
+              <tr>
+                <td>Cost Centre</td>
+                <td id="emp-CC"></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+
+      </section>
+
+      <!-- ========================================= "Supplier" SECTION ============================================    -->
+
+
+      <h2 class="h2-banner"> Supplier Details </h2>
+      <section id="supplier-details" class="row">
+
+        <div class="col-lg-4 col-md-3 col-sm-4">
+          <div class="form-group">
+            <label>Category *</label>
+            <select id="category-input" class="form-control">
+              <option selected="selected" value="">Please Select...</option>
+              <option>Choice 1</option>
+              <option>Choice 2</option>
+            </select>
+
+
+          </div>
+        </div>
+        <!-- Is this a one-off supplier? * - if "No" selected, then hide the rest of the section -->
+        <div class="col-lg-4 col-md-3 col-sm-4">
+          <div class="form-group">
+
+            <label>Is this a one-off supplier? *</label>
+            <select id="category-input" class="form-control">
+              <option selected="selected" value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- IF one-off supplier is "NO" display this -->
+
+      <section id="supplier-extender-form" class="row">
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Supplier Name *</label>
+            <input id="supplier-name" class="form-control" type="text" placeholder="Type name" />
+          </div>
+
+        </div>
+        <!-- Is this a one-off supplier? * - if "No" selected, then hide the rest of the section -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label> Phone *</label>
+            <input id="supplier-phone" class="form-control" type="text" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+
+            <label>E-mail address *</label>
+            <input id="supplier-email" class="form-control" type="text" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label for="supplier-address">Address *</label>
+            <textarea id="supplier-address" class="form-control" rows="4"></textarea>
+          </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label for="post-code">Postcode *</label>
+            <input type="text" id="postcode" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label for="payment-address">Payment Address (if different to above)</label>
+            <textarea id="payment-address" class="form-control" rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label for="paymt-postcode">Payment postcode *</label>
+            <input type="text" id="paymt-postcode" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>CRN (Company Registration Number) *</label>
+            <input id="crn" class="form-control" type="text" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>VAT Number (if registered) *</label>
+            <input id="VAT" class="form-control" type="text" />
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-3 col-sm-4">
+          <div class="form-group">
+
+            <label>Is this a self-billing supplier? *</label>
+            <select id="selfbill-input" class="form-control">
+              <option selected="selected" value="No">No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-3 col-sm-4">
+          <div class="form-group">
+
+            <label>Is this a self-billing supplier? *</label>
+            <select id="selfbill-input" class="form-control">
+              <option selected="selected" value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-3 col-sm-4">
+          <div class="form-group">
+            <label>What currency will the supplier need to be paid in? *</label>
+            <select id="currency-input" class="form-control">
+              <option selected="selected" value="GBP">No</option>
+              <option value="EUR">EUR</option>
+              <option value="USD">USD</option>
+              <option value="AUD">AUD</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========================================= "CEST Details" SECTION ============================================    -->
+      <h2 class="h2-banner"> CEST Details </h2>
+
+      <section id="CEST-details" class="row">
+
+        <!-- CEST details -->
+        <!-- Is it a personal service provided? (CEST) Question -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Is it a personal service provided? (CEST)? *</label>
+            <select id="CEST-question" class="form-control">
+              <option selected="selected" value="">Please select</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select> </div>
+        </div>
+
+      </section>
+
+      <!--________________  HIDDEN SECTION - If CEST question = "Yes", display this _______________-->
+      <section id="CEST-extender-form" class="row">
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Is it an IT contractor? *</label>
+            <select id="CEST-question" class="form-control">
+              <option selected="selected" value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Contractor's Name *</label>
+            <input type="text" id="contractor-name" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Job Title *</label>
+            <input type="text" id="contractor-name" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Start Date*</label>
+            <input type="date" id="start-date" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>End Date*</label>
+            <input type="date" id="end-date" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Is it an IT contractor? *</label>
+            <select id="CEST-question" class="form-control">
+              <option selected="selected" value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Is it an IT contractor? *</label>
+            <select id="CEST-question" class="form-control">
+              <option selected="selected" value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Is it an IT contractor? *</label>
+            <select id="CEST-question" class="form-control">
+              <option selected="selected" value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+
+      </section>
+
+
+
+
+      <!-- hidden section for CEST details -->
+
+
+    </form>
+
+
+
+  </div>
+
+</body>
+
+</html>
