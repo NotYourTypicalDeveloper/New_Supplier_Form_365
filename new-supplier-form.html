@@ -167,8 +167,9 @@
 
             <label>Is this a one-off supplier? *</label>
             <select id="category-input" class="form-control">
-              <option selected="selected" value="No">No</option>
+              <option selected="selected" value="">Please select</option>
               <option value="Yes">Yes</option>
+              <option value="No">No</option>
             </select>
           </div>
         </div>
@@ -204,29 +205,29 @@
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label for="supplier-address">Address *</label>
-            <textarea id="supplier-address" class="form-control" rows="4"></textarea>
+            <label>Address *</label>
+            <textarea id="supplier-address" class="form-control" rows="3"></textarea>
           </div>
 
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label for="post-code">Postcode *</label>
+            <label>Postcode *</label>
             <input type="text" id="postcode" class="form-control" />
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label for="payment-address">Payment Address (if different to above)</label>
-            <textarea id="payment-address" class="form-control" rows="4"></textarea>
+            <label>Payment Address (if different to above)</label>
+            <textarea id="payment-address" class="form-control" rows="3"></textarea>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label for="paymt-postcode">Payment postcode *</label>
+            <label>Payment postcode *</label>
             <input type="text" id="paymt-postcode" class="form-control" />
           </div>
         </div>
@@ -250,19 +251,20 @@
 
             <label>Is this a self-billing supplier? *</label>
             <select id="selfbill-input" class="form-control">
-              <option selected="selected" value="No">No</option>
-              <option>Yes</option>
+              <option selected="selected" value="">Please select</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
             </select>
           </div>
         </div>
 
         <div class="col-lg-4 col-md-3 col-sm-4">
           <div class="form-group">
-
             <label>Is this a self-billing supplier? *</label>
             <select id="selfbill-input" class="form-control">
-              <option selected="selected" value="No">No</option>
+              <option selected="selected" value="">Please select</option>
               <option value="Yes">Yes</option>
+              <option value="No">No</option>
             </select>
           </div>
         </div>
@@ -308,10 +310,43 @@
           <div class="form-group">
             <label>Is it an IT contractor? *</label>
             <select id="CEST-question" class="form-control">
-              <option selected="selected" value="No">No</option>
-              <option value="Yes">Yes</option>
+              <option selected="selected" value="">Please select</option>
+              <option value="No">No</option>
+              <option value="Yes">Yes</option> <!-- If YES: display IT contractor special questions-->
             </select>
           </div>
+        </div>
+
+
+        <!-- HIDDEN FIELDS - will show if "Is IT contractor?" = "YES" -->
+        <!-- ============================================================================= -->
+        <div id="ITContractor-questions-section">
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Has the diversity and inclusion policy been completed? *</label>
+              <select id="diversity-question" class="form-control">
+                <option selected="selected" value="">Please select</option>
+                <option value="Yes">Yes</option> <!-- IF selected by user, show date field -->
+                <option value="No">No</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- HIDDEN FIELD - will show if "Diversity policy" = "YES" -->
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>If yes, when? *</label>
+              <input type="date" id="start-date" class="form-control" />
+            </div>
+          </div>
+
+
+          <!-- deliverables -->
+          <!-- have you ever worked for uk? -->
+          <!-- are you UK citizen?  -->
+          <!-- Do you have work authorization?  -->
+
+
         </div>
 
 
@@ -331,55 +366,118 @@
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Start Date*</label>
+            <label>Start Date *</label>
             <input type="date" id="start-date" class="form-control" />
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>End Date*</label>
+            <label>End Date *</label>
             <input type="date" id="end-date" class="form-control" />
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Is it an IT contractor? *</label>
-            <select id="CEST-question" class="form-control">
-              <option selected="selected" value="No">No</option>
-              <option value="Yes">Yes</option>
+            <label>Notice Period *</label>
+            <select id="notice" class="form-control">
+              <option selected="selected" value="1 week">1 week</option>
+              <option selected="selected" value="2 weeks">2 weeks</option>
+              <option selected="selected" value="3 weeks">3 weeks</option>
+              <option selected="selected" value="4 weeks">4 weeks</option>
             </select>
           </div>
         </div>
-
-
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Is it an IT contractor? *</label>
-            <select id="CEST-question" class="form-control">
-              <option selected="selected" value="No">No</option>
-              <option value="Yes">Yes</option>
-            </select>
+            <label>Day rate *</label>
+            <input type="text" id="day-rate" class="form-control" />
           </div>
         </div>
+
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Is it an IT contractor? *</label>
-            <select id="CEST-question" class="form-control">
-              <option selected="selected" value="No">No</option>
-              <option value="Yes">Yes</option>
+            <label>Expected Contracted Hours *</label>
+            <input type="text" id="hours" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Services to be provided *</label>
+            <textarea id="services" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Any other relevant information *</label>
+            <textarea id="other-info" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Location *</label>
+            <input type="text" id="location" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Contract Length *</label>
+            <input type="text" id="contract-length" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Agency Name</label>
+            <input type="text" id="agency-name" class="form-control" />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Agency Address</label>
+            <textarea id="agency-address" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Agency point of contact and reports</label>
+            <textarea id="agency-contact" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Has the CEST or Radio Presenter questionnaire been completed? *</label>
+            <select id="CEST-radiopres-question" class="form-control">
+              <option selected="selected" value="">Please select</option>
+              <option value="Yes">Yes</option> <!-- IF selected by user, show date field -->
+              <option value="No">No</option>
             </select>
           </div>
         </div>
 
+
+        <!-- HIDDEN FIELD - will show if Has the CEST or Radio Presenter questionnaire been completed? = "YES" (IRC date of completion)-->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>If yes, when? Please attach a copy *</label>
+            <input type="date" id="IRC35-completion-date" class="form-control" />
+          </div>
+        </div>
       </section>
 
 
 
 
-      <!-- hidden section for CEST details -->
+
 
 
     </form>
