@@ -71,7 +71,7 @@ label {
 }
 
 /* supplier extender form */
-#supplier-extender-form,
+#supplier-extender-section,
 #freelancer-section {
     border: 1px solid #89dce9;
 }
@@ -86,4 +86,50 @@ table td {
 
 #ITContractor-questions-section {
     border: 1px solid pink;
+}
+
+/* UPLOAD button */
+
+/* ============== File upload / Job description ============ */
+/* we don't hide the fileinput otherwise functionality won't work */
+#fileinput {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+#fileinput-label-wrapper {
+    text-align: left;
+    height: 40px;
+    margin-top: 1em;
+}
+
+#fileinput-label {
+    width: auto;
+    height: 38px;
+    padding: 15px;
+    border: solid 1px #054861;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline;
+    color: #054861;
+    padding: 1em 2em;
+}
+
+/* SVG icon */
+svg {
+    fill: #054861;
+    margin: 0 0.5em 0.4em 0;
+}
+
+/* upload button */
+#fileinput:focus {
+    -webkit-box-shadow: 1px 2px 3px 4px #054861;
+    ;
+    box-shadow: 1px 2px 3px 4px #27a7d6;
+    ;
+    outline: none;
 }
