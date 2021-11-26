@@ -66,13 +66,14 @@
 
   <div id="form-ctnr" class="container">
     <form id="newsupp-form">
+
+      <!-- ================================================================================================================= -->
       <!-- ========================================= "User Details" SECTION ============================================    -->
       <h2 class="h2-banner"> User Details </h2>
 
       <section id="user-details" class="row">
 
         <div class="col-lg-6 col-md-6 col-sm-6">
-
 
           <!-- Employee Name -->
           <div>
@@ -143,6 +144,7 @@
 
       </section>
 
+      <!-- ============================================================================================================ -->
       <!-- ========================================= "Supplier" SECTION ============================================    -->
 
 
@@ -153,30 +155,114 @@
           <div class="form-group">
             <label>Category *</label>
             <select id="category-input" class="form-control">
-              <option selected="selected" value="">Please Select...</option>
-              <option>Choice 1</option>
-              <option>Choice 2</option>
+              <option selected="selected">Standard</option>
+              <option>Contributor/Freelancer</option> <!-- if selected, will populate FREELANCER section ///-->
             </select>
-
 
           </div>
         </div>
-        <!-- Is this a one-off supplier? * - if "No" selected, then hide the rest of the section -->
+        <!-- Is this a one-off supplier? * - if "No" selected, then hide the rest of the Supplier extender section *** -->
         <div class="col-lg-4 col-md-3 col-sm-4">
           <div class="form-group">
 
             <label>Is this a one-off supplier? *</label>
             <select id="category-input" class="form-control">
               <option selected="selected" value="">Please select</option>
-              <option value="Yes">Yes</option>
+              <option value="Yes">Yes</option> <!-- if YES => hide the whole supplier extender form ***-->
               <option value="No">No</option>
             </select>
           </div>
         </div>
       </section>
 
+      <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-      <!-- IF one-off supplier is "NO" display this -->
+      <!-- /// HIDDEN - FREELANCER SECTION => will show only if Category = "Contributor/Freelancer" is selected -->
+      <section id="freelancer-section" class="row">
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>What type of Freelance service is this? *</label>
+            <select id="service-type" class="form-control">
+              <option selected="selected" value="">Please select</option>
+              <option value="Advertising Production">Advertising Production</option>
+              <option value="Agency">Agency</option>
+              <option value="Appearance Fee">Appearance Fee</option>
+              <option value="Consultancy">Consultancy</option>
+              <option value="Design">Design</option>
+              <option value="Events Management">Events Management</option>
+              <option value="Freelance Sales">Freelance Sales</option>
+              <option value="Make-up Artist">Make-up Artist</option>
+              <option value="Photography">Photography</option>
+              <option value="Presenter/DJ">Presenter/DJ</option>
+              <option value="Programme Production">Programme Production</option>
+              <option value="Stylist">Stylist</option>
+              <option value="Subbing">Subbing</option>
+              <option value="Trainer">Trainer</option>
+              <option value="Video Production">Video Production</option>
+              <option value="Voice Artist">Voice Artist</option>
+              <option value="Writer">Writer</option>
+
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Does this supplier work at a Bauer location? *</label>
+            <select id="work-Bauer-location" class="form-control">
+              <option selected="selected" value="">Please select</option>
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Is Bauer responsible for payment of tax and NI? *</label>
+            <select id="tax-ni" class="form-control">
+              <option selected="selected" value="">Please select</option>
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Does this supplier use Bauer equipment? *</label>
+            <select id="bauer-equip" class="form-control">
+              <option selected="selected" value="">Please select</option>
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Is this supplier on a fixed term or permanent contract? *</label>
+            <select id="fix-perm" class="form-control">
+              <option selected="selected" value="">Please select</option>
+              <option value="N/A">N/A</option>
+              <option value="Fixed">Fixed</option>
+              <option value="Permanent">Permanent</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <p class="container font-weight-bold">A decision on the taxable status of this Contributor / Freelancer will not
+          be made
+          as a result of the the responses given above.
+
+        </p>
+
+      </section>
+
+      <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+      <!-- *** Supplier extender form - IF one-off supplier = "NO" display this -->
 
       <section id="supplier-extender-form" class="row">
 
@@ -251,7 +337,7 @@
 
             <label>Is this a self-billing supplier? *</label>
             <select id="selfbill-input" class="form-control">
-              <option selected="selected" value="">Please select</option>
+              <option selected="selected" "">Please select</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
@@ -290,8 +376,8 @@
           </div>
         </div>
 
-
       </section>
+      <!-- ============================================================================================================= -->
 
       <!-- ========================================= "CEST Details" SECTION ============================================    -->
       <h2 class="h2-banner"> CEST Details </h2>

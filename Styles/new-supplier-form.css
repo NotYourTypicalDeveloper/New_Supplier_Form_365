@@ -8,6 +8,10 @@ body {
     font-size: 13px;
 }
 
+section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
 
 /* Header */
 
@@ -67,7 +71,8 @@ label {
 }
 
 /* supplier extender form */
-#supplier-extender-form {
+#supplier-extender-form,
+#freelancer-section {
     border: 1px solid #89dce9;
 }
 
