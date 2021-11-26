@@ -78,3 +78,7 @@ table td {
 #employeeDetails tr:nth-child(odd) {
     background-color: #e5fafd;
 }
+
+#ITContractor-questions-section {
+    border: 1px solid pink;
+}

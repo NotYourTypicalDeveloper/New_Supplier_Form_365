@@ -49,7 +49,7 @@
     <div class="disclaimer container">
       <p>Prior to completing this form, use this search button to check if the supplier or contributor exists in
         Proactis already -
-        <button id="supplier-search-btn" class="btn btn-info">Supplier Search </button>
+        <button id="supplier-search-btn" class="btn btn-info"><i class="fas fa-search"></i> Supplier Search </button>
       </p>
 
       <p>Complete this form in order to request the creation of a new supplier or contributor in Proactis. This will
@@ -277,10 +277,19 @@
               <option value="EUR">EUR</option>
               <option value="USD">USD</option>
               <option value="AUD">AUD</option>
-              <option value="Other">Other</option>
+              <option value="Other">Other</option> <!-- if OTHER is selected => populate specify currency field-->
             </select>
           </div>
         </div>
+
+        <!-- HIDDEN FIELD - If "other currency" is selected, show this  -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Please specify the currency the supplier will need to be paid in *</label>
+            <input type="text" id="other-currency" class="form-control" />
+          </div>
+        </div>
+
 
       </section>
 
@@ -317,39 +326,81 @@
           </div>
         </div>
 
+      </section>
 
-        <!-- HIDDEN FIELDS - will show if "Is IT contractor?" = "YES" -->
-        <!-- ============================================================================= -->
-        <div id="ITContractor-questions-section">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <div class="form-group">
-              <label>Has the diversity and inclusion policy been completed? *</label>
-              <select id="diversity-question" class="form-control">
-                <option selected="selected" value="">Please select</option>
-                <option value="Yes">Yes</option> <!-- IF selected by user, show date field -->
-                <option value="No">No</option>
-              </select>
-            </div>
+
+      <!--==================== HIDDEN FIELDS - IF "Is IT contractor?" = "YES" ============================-->
+      <!-- ============================================================================= -->
+      <section id="ITContractor-questions-section" class="row">
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Has the diversity and inclusion policy been completed? *</label>
+            <select id="diversity-question" class="form-control">
+              <option selected="selected" value="">Please select</option>
+              <option value="Yes">Yes</option> <!-- IF selected by user, show date field -->
+              <option value="No">No</option>
+            </select>
           </div>
+        </div>
 
-          <!-- HIDDEN FIELD - will show if "Diversity policy" = "YES" -->
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <div class="form-group">
-              <label>If yes, when? *</label>
-              <input type="date" id="start-date" class="form-control" />
-            </div>
+        <!-- HIDDEN FIELD - will show if "Diversity policy" = "YES" -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>If yes, when? *</label>
+            <input type="date" id="start-date" class="form-control" />
           </div>
-
-
-          <!-- deliverables -->
-          <!-- have you ever worked for uk? -->
-          <!-- are you UK citizen?  -->
-          <!-- Do you have work authorization?  -->
-
-
         </div>
 
 
+        <!-- deliverables -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Deliverables *</label>
+            <textarea id="deliverables" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- are you UK citizen?  -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Is the contractor citizen of the UK? *</label>
+            <select id="UKCitizen" class="form-control">
+              <option selected="selected" value="">Please select</option>
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Do you have work authorization?  -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Are you authorized to work in the UK? *</label>
+            <select id="authorized-work" class="form-control">
+              <option selected="selected" value="">Please select</option>
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Has contractor ever worked for Bauer? -->
+        <div class="col-md-6 col-lg-4 col-xl-4">
+          <div class="form-group">
+            <label>Has the contractor ever worked for Bauer? *</label>
+            <select id="ever-worked-for-Bauer" class="form-control">
+              <option selected="selected" value="">Please select</option>
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+
+
+
+      </section>
+
+      <section class="row">
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
             <label>Contractor's Name *</label>
@@ -473,6 +524,12 @@
           </div>
         </div>
       </section>
+
+      <!-- ========================================= "BANK DETAILS" SECTION ============================================    -->
+
+
+      <!-- ========================================= "Other info" SECTION ============================================    -->
+
 
 
 
