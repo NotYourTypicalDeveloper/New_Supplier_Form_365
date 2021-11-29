@@ -16,10 +16,6 @@
   <!-- type="text/css"> -->
   <!-- <link rel="stylesheet" href="/sites/UK-Forms/Finance/SiteAssets/FontAwesomeCSS/solid.css" type="text/css"> -->
 
-  <!-- Bootstrap css -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" -->
-  <!-- integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
-
   <!-- our external css stylesheets -->
   <!-- <link rel="stylesheet" href="/sites/UK-Forms/Finance/SiteAssets/Styles/new-supplier-form.css" type="text/css" /> -->
 
@@ -32,7 +28,7 @@
   <link rel="stylesheet" href="./FontAwesomeCSS/fontawesome.css" type="text/css">
   <link rel="stylesheet" href="./FontAwesomeCSS/solid.css" type="text/css">
 
-  <!-- Bootstrap css -->
+  <!-- CDN Bootstrap css -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -155,8 +151,10 @@
           <div class="form-group">
             <label>Category *</label>
             <select id="category" class="form-control">
-              <option selected="selected">Standard</option>
-              <option>Contributor/Freelancer</option> <!-- if selected, will populate FREELANCER section ///-->
+              <option selected="selected" value="">Please select</option>
+              <option value="Standard">Standard</option>
+              <option value="Contributor/Freelancer">Contributor/Freelancer</option>
+              <!-- if selected, will populate FREELANCER section ///-->
             </select>
 
           </div>
@@ -177,95 +175,95 @@
 
       <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-      <!-- /// HIDDEN - FREELANCER SECTION => will show only if Category = "Contributor/Freelancer" is selected -->
-      <section id="freelancer-section" class="row">
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>What type of Freelance service is this? *</label>
-            <select id="service-type-input" class="form-control">
-              <option selected="selected" value="">Please select</option>
-              <option value="Advertising Production">Advertising Production</option>
-              <option value="Agency">Agency</option>
-              <option value="Appearance Fee">Appearance Fee</option>
-              <option value="Consultancy">Consultancy</option>
-              <option value="Design">Design</option>
-              <option value="Events Management">Events Management</option>
-              <option value="Freelance Sales">Freelance Sales</option>
-              <option value="Make-up Artist">Make-up Artist</option>
-              <option value="Photography">Photography</option>
-              <option value="Presenter/DJ">Presenter/DJ</option>
-              <option value="Programme Production">Programme Production</option>
-              <option value="Stylist">Stylist</option>
-              <option value="Subbing">Subbing</option>
-              <option value="Trainer">Trainer</option>
-              <option value="Video Production">Video Production</option>
-              <option value="Voice Artist">Voice Artist</option>
-              <option value="Writer">Writer</option>
 
-            </select>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Does this supplier work at a Bauer location? *</label>
-            <select id="work-Bauer-location" class="form-control">
-              <option selected="selected" value="">Please select</option>
-              <option value="No">No</option>
-              <option value="Yes">Yes</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Is Bauer responsible for payment of tax and NI? *</label>
-            <select id="tax-ni" class="form-control">
-              <option selected="selected" value="">Please select</option>
-              <option value="No">No</option>
-              <option value="Yes">Yes</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Does this supplier use Bauer equipment? *</label>
-            <select id="bauer-equip" class="form-control">
-              <option selected="selected" value="">Please select</option>
-              <option value="No">No</option>
-              <option value="Yes">Yes</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Is this supplier on a fixed term or permanent contract? *</label>
-            <select id="fix-perm" class="form-control">
-              <option selected="selected" value="">Please select</option>
-              <option value="N/A">N/A</option>
-              <option value="Fixed">Fixed</option>
-              <option value="Permanent">Permanent</option>
-            </select>
-          </div>
-        </div>
-        <br>
-        <p class="container font-weight-bold">A decision on the taxable status of this Contributor / Freelancer will not
-          be made
-          as a result of the the responses given above.
-
-        </p>
-
-      </section>
 
       <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
 
       <!-- *** Supplier extender form - IF one-off supplier = "NO" display this -->
 
       <section id="supplier-extender-section" class="row">
+        <!-- /// HIDDEN - FREELANCER SECTION => will show only if Category = "Contributor/Freelancer" is selected -->
+        <section id="freelancer-section" class="row">
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>What type of Freelance service is this? *</label>
+              <select id="service-type-input" class="form-control">
+                <option selected="selected" value="">Please select</option>
+                <option value="Advertising Production">Advertising Production</option>
+                <option value="Agency">Agency</option>
+                <option value="Appearance Fee">Appearance Fee</option>
+                <option value="Consultancy">Consultancy</option>
+                <option value="Design">Design</option>
+                <option value="Events Management">Events Management</option>
+                <option value="Freelance Sales">Freelance Sales</option>
+                <option value="Make-up Artist">Make-up Artist</option>
+                <option value="Photography">Photography</option>
+                <option value="Presenter/DJ">Presenter/DJ</option>
+                <option value="Programme Production">Programme Production</option>
+                <option value="Stylist">Stylist</option>
+                <option value="Subbing">Subbing</option>
+                <option value="Trainer">Trainer</option>
+                <option value="Video Production">Video Production</option>
+                <option value="Voice Artist">Voice Artist</option>
+                <option value="Writer">Writer</option>
 
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Does this supplier work at a Bauer location? *</label>
+              <select id="work-Bauer-location" class="form-control">
+                <option selected="selected" value="">Please select</option>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Is Bauer responsible for payment of tax and NI? *</label>
+              <select id="tax-ni" class="form-control">
+                <option selected="selected" value="">Please select</option>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Does this supplier use Bauer equipment? *</label>
+              <select id="bauer-equip" class="form-control">
+                <option selected="selected" value="">Please select</option>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Is this supplier on a fixed term or permanent contract? *</label>
+              <select id="fix-perm" class="form-control">
+                <option selected="selected" value="">Please select</option>
+                <option value="N/A">N/A</option>
+                <option value="Fixed">Fixed</option>
+                <option value="Permanent">Permanent</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <p class="container font-weight-bold">A decision on the taxable status of this Contributor / Freelancer will
+            not
+            be made
+            as a result of the the responses given above.
+
+          </p>
+
+        </section>
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
             <label>Supplier Name *</label>
@@ -703,15 +701,27 @@
       <!-- Submit button -->
       <button class="btn submit-btn" id="submit-btn">SUBMIT</button>
 
-
-
-
-
     </form>
+
+    <!-- =================== Form ends ===================-->
 
 
 
   </div>
+
+  <!-- SCRIPT TAGS -->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+  <!-- jQuery validator -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+
+  <script type="text/javascript" src="./Scripts/new-supplier-form.js"></script>
+
+  <!-- TODO: on prod add the link to the local JS -->
+
 
 </body>
 
