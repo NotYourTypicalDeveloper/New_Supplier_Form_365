@@ -128,8 +128,59 @@ svg {
 /* upload button */
 #fileinput:focus {
     -webkit-box-shadow: 1px 2px 3px 4px #054861;
-    ;
     box-shadow: 1px 2px 3px 4px #27a7d6;
-    ;
     outline: none;
+}
+
+.submit-btn {
+    background-color: #32597B;
+    width: 160px;
+    font-weight: 500;
+    height: 40px;
+    letter-spacing: .5px;
+    color: white;
+    float: right;
+    /* for shiny effect */
+    overflow: hidden;
+    position: relative;
+}
+
+/* pseudo element shine animation left side */
+.submit-btn::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, .2);
+    width: 30px;
+    height: 100%;
+    top: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skew(-15deg);
+
+}
+
+
+/* pseudo-element shine animation right side */
+.submit-btn::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 100%;
+    top: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skewX(-15deg);
+}
+
+.submit-btn:hover {
+    color: white;
+    background-color: #163058;
+
+}
+
+.submit-btn:hover::before,
+.submit-btn:hover::before {
+    transform: translateX(300px) skewX(-15deg);
+    transition: 0.7s;
 }
