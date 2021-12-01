@@ -60,7 +60,7 @@
 
   </header>
 
-  <div id="form-ctnr" class="container">
+  <section id="form-ctnr" class="container">
     <form id="newsupp-form">
 
       <!-- ================================================================================================================= -->
@@ -159,6 +159,7 @@
 
           </div>
         </div>
+
         <!-- Is this a one-off supplier? * - if "No" selected, then hide the rest of the Supplier extender section *** -->
         <div class="col-lg-4 col-md-3 col-sm-4">
           <div class="form-group">
@@ -172,8 +173,6 @@
           </div>
         </div>
       </section>
-
-      <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
 
@@ -367,7 +366,7 @@
         </div>
 
         <!-- HIDDEN FIELD - If "other currency" is selected, show this  -->
-        <div class="col-md-6 col-lg-4 col-xl-4">
+        <div id="other-currency-wrapper" class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
             <label>Please specify the currency the supplier will need to be paid in *</label>
             <input type="text" id="other-currency" class="form-control" />
@@ -402,7 +401,7 @@
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
             <label>Is it an IT contractor? *</label>
-            <select id="CEST-question" class="form-control">
+            <select id="IT_Contractor-question" class="form-control">
               <option selected="selected" value="">Please select</option>
               <option value="No">No</option>
               <option value="Yes">Yes</option> <!-- If YES: display IT contractor special questions-->
@@ -410,201 +409,214 @@
           </div>
         </div>
 
-      </section>
 
 
-      <!--==================== HIDDEN FIELDS - IF "Is IT contractor?" = "YES" ============================-->
-      <!-- ============================================================================= -->
-      <section id="ITContractor-questions-section" class="row">
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Has the diversity and inclusion policy been completed? *</label>
-            <select id="diversity-question" class="form-control">
-              <option selected="selected" value="">Please select</option>
-              <option value="Yes">Yes</option> <!-- IF selected by user, show date field -->
-              <option value="No">No</option>
-            </select>
+        <!--==================== HIDDEN FIELDS - IF "Is IT contractor?" = "YES" ============================-->
+        <!-- ============================================================================= -->
+        <div id="ITContractor-questions-section" class="row">
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Has the diversity and inclusion policy been completed? *</label>
+              <select id="diversity-question" class="form-control">
+                <option selected="selected" value="">Please select</option>
+                <option value="Yes">Yes</option> <!-- IF selected by user, show date field -->
+                <option value="No">No</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- HIDDEN FIELD - will show if "Diversity policy" = "YES" -->
+          <div id="diversity-date-wrapper" class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>If yes, when? *</label>
+              <input type="date" id="diversity-date" class="form-control" />
+            </div>
+          </div>
+
+
+          <!-- deliverables -->
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Deliverables *</label>
+              <textarea id="deliverables" class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+
+          <!-- are you UK citizen?  -->
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Is the contractor citizen of the UK? *</label>
+              <select id="UKCitizen" class="form-control">
+                <option selected="selected" value="">Please select</option>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Do you have work authorization?  -->
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Are you authorized to work in the UK? *</label>
+              <select id="authorized-work" class="form-control">
+                <option selected="selected" value="">Please select</option>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Has contractor ever worked for Bauer? -->
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Has the contractor ever worked for Bauer? *</label>
+              <select id="ever-worked-for-Bauer" class="form-control">
+                <option selected="selected" value="">Please select</option>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+              </select>
+            </div>
           </div>
         </div>
 
-        <!-- HIDDEN FIELD - will show if "Diversity policy" = "YES" -->
-        <div class="col-md-6 col-lg-4 col-xl-4">
+        <!-- Hidden field, will show if "ever worked for Bauer" = Yes -->
+        <div id="ever-worked-date-wrapper" class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
             <label>If yes, when? *</label>
-            <input type="date" id="start-date" class="form-control" />
+            <input type="date" id="ever-worked-date" class="form-control" />
           </div>
         </div>
 
 
-        <!-- deliverables -->
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Deliverables *</label>
-            <textarea id="deliverables" class="form-control" rows="3"></textarea>
-          </div>
-        </div>
+        <!-- Basic info for CEST -->
 
-        <!-- are you UK citizen?  -->
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Is the contractor citizen of the UK? *</label>
-            <select id="UKCitizen" class="form-control">
-              <option selected="selected" value="">Please select</option>
-              <option value="No">No</option>
-              <option value="Yes">Yes</option>
-            </select>
+        <section id="basic-info-CEST" class="row">
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Contractor's Name *</label>
+              <input type="text" id="contractor-name" class="form-control" />
+            </div>
           </div>
-        </div>
 
-        <!-- Do you have work authorization?  -->
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Are you authorized to work in the UK? *</label>
-            <select id="authorized-work" class="form-control">
-              <option selected="selected" value="">Please select</option>
-              <option value="No">No</option>
-              <option value="Yes">Yes</option>
-            </select>
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Job Title *</label>
+              <input type="text" id="job-title" class="form-control" />
+            </div>
           </div>
-        </div>
 
-        <!-- Has contractor ever worked for Bauer? -->
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Has the contractor ever worked for Bauer? *</label>
-            <select id="ever-worked-for-Bauer" class="form-control">
-              <option selected="selected" value="">Please select</option>
-              <option value="No">No</option>
-              <option value="Yes">Yes</option>
-            </select>
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Start Date *</label>
+              <input type="date" id="start-date" class="form-control" />
+            </div>
           </div>
-        </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>End Date *</label>
+              <input type="date" id="end-date" class="form-control" />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Notice Period *</label>
+              <select id="notice" class="form-control">
+                <option selected="selected" value="1 week">1 week</option>
+                <option selected="selected" value="2 weeks">2 weeks</option>
+                <option selected="selected" value="3 weeks">3 weeks</option>
+                <option selected="selected" value="4 weeks">4 weeks</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Day rate *</label>
+              <input type="text" id="day-rate" class="form-control" />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Expected Contracted Hours *</label>
+              <input type="text" id="hours" class="form-control" />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Services to be provided *</label>
+              <textarea id="services" class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Any other relevant information *</label>
+              <textarea id="other-info" class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Location *</label>
+              <input type="text" id="location" class="form-control" />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Contract Length *</label>
+              <input type="text" id="contract-length" class="form-control" />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Agency Name</label>
+              <input type="text" id="agency-name" class="form-control" />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Agency Address</label>
+              <textarea id="agency-address" class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Agency point of contact and reports</label>
+              <textarea id="agency-contact" class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>Has the CEST or Radio Presenter questionnaire been completed? *</label>
+              <select id="CEST-radiopres-question" class="form-control">
+                <option selected="selected" value="">Please select</option>
+                <option value="Yes">Yes</option> <!-- IF selected by user, show date field -->
+                <option value="No">No</option>
+              </select>
+            </div>
+          </div>
+
+
+          <!-- HIDDEN FIELD - will show if Has the CEST or Radio Presenter questionnaire been completed? = "YES" (IRC date of completion)-->
+          <div id="IRC35-date-wrapper" class="col-md-6 col-lg-4 col-xl-4">
+            <div class="form-group">
+              <label>If yes, when? Please attach a copy *</label>
+              <input type="date" id="IRC35-completion-date" class="form-control" />
+            </div>
+          </div>
+        </section>
+
       </section>
 
-      <section class="row">
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Contractor's Name *</label>
-            <input type="text" id="contractor-name" class="form-control" />
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Job Title *</label>
-            <input type="text" id="contractor-name" class="form-control" />
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Start Date *</label>
-            <input type="date" id="start-date" class="form-control" />
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>End Date *</label>
-            <input type="date" id="end-date" class="form-control" />
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Notice Period *</label>
-            <select id="notice" class="form-control">
-              <option selected="selected" value="1 week">1 week</option>
-              <option selected="selected" value="2 weeks">2 weeks</option>
-              <option selected="selected" value="3 weeks">3 weeks</option>
-              <option selected="selected" value="4 weeks">4 weeks</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Day rate *</label>
-            <input type="text" id="day-rate" class="form-control" />
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Expected Contracted Hours *</label>
-            <input type="text" id="hours" class="form-control" />
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Services to be provided *</label>
-            <textarea id="services" class="form-control" rows="3"></textarea>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Any other relevant information *</label>
-            <textarea id="other-info" class="form-control" rows="3"></textarea>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Location *</label>
-            <input type="text" id="location" class="form-control" />
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Contract Length *</label>
-            <input type="text" id="contract-length" class="form-control" />
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Agency Name</label>
-            <input type="text" id="agency-name" class="form-control" />
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Agency Address</label>
-            <textarea id="agency-address" class="form-control" rows="3"></textarea>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Agency point of contact and reports</label>
-            <textarea id="agency-contact" class="form-control" rows="3"></textarea>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>Has the CEST or Radio Presenter questionnaire been completed? *</label>
-            <select id="CEST-radiopres-question" class="form-control">
-              <option selected="selected" value="">Please select</option>
-              <option value="Yes">Yes</option> <!-- IF selected by user, show date field -->
-              <option value="No">No</option>
-            </select>
-          </div>
-        </div>
-
-
-        <!-- HIDDEN FIELD - will show if Has the CEST or Radio Presenter questionnaire been completed? = "YES" (IRC date of completion)-->
-        <div class="col-md-6 col-lg-4 col-xl-4">
-          <div class="form-group">
-            <label>If yes, when? Please attach a copy *</label>
-            <input type="date" id="IRC35-completion-date" class="form-control" />
-          </div>
-        </div>
-      </section>
 
       <!-- ============================================================================================================ -->
       <!-- ========================================= "BANK DETAILS" SECTION ============================================    -->
@@ -698,16 +710,28 @@
 
       </section>
 
-      <!-- Submit button -->
-      <button class="btn submit-btn" id="submit-btn">SUBMIT</button>
-
     </form>
+
+
+    <!-- Submit button -->
+
+    <div class="flex"> <button class="btn submit-btn" id="submit-btn">SUBMIT</button></div>
+
+
+
+
 
     <!-- =================== Form ends ===================-->
 
+    <footer class="footer container">
+      <p> For any queries, contact the BCS Vendor Maintenance Team </p>
+      <p> <i class="fas fa-envelope"></i> bauervmaint@bauerservices.co.uk</p>
+      <p> <i class="fas fa-phone"></i> 01 733 213 718</p>
+    </footer>
+
+  </section>
 
 
-  </div>
 
   <!-- SCRIPT TAGS -->
 

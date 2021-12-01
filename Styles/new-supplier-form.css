@@ -2,6 +2,10 @@ html {
     box-sizing: border-box;
 }
 
+.flex {
+    display: flex;
+}
+
 html,
 body {
     margin: 0px;
@@ -12,6 +16,17 @@ section {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+/* HIDDEN BY DEFAULT */
+
+#freelancer-section,
+#CEST-extender-form,
+#ITContractor-questions-section,
+#ever-worked-date-wrapper,
+#IRC35-date-wrapper {
+    display: none;
+}
+
 
 /* Header */
 
@@ -76,6 +91,14 @@ label {
     border: 1px solid #89dce9;
 }
 
+/* // remove margins from these sections will realign inputs of nested section */
+#freelancer-section,
+#ITContractor-questions-section,
+#basic-info-CEST {
+    margin-right: 0;
+    margin-left: 0;
+}
+
 table td {
     border: solid 1px #054861;
 }
@@ -132,6 +155,7 @@ svg {
     outline: none;
 }
 
+
 .submit-btn {
     background-color: #32597B;
     width: 160px;
@@ -139,7 +163,7 @@ svg {
     height: 40px;
     letter-spacing: .5px;
     color: white;
-    float: right;
+    
     /* for shiny effect */
     overflow: hidden;
     position: relative;
@@ -183,4 +207,13 @@ svg {
 .submit-btn:hover::before {
     transform: translateX(300px) skewX(-15deg);
     transition: 0.7s;
+}
+
+.footer {
+    background-color: #054861;
+    color: silver;
+    border-radius: 10px;
+    padding: 2em;
+    top: 3em;
+
 }

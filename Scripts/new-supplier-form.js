@@ -9,14 +9,30 @@ var $categoryDD = $('#category');
 var $freelancerSection = $('#freelancer-section');
 
 var $currencyDD = $('#currency-input');
-var $otherCurrInp = $('#other-currency');
+var $otherCurrInp = $('#other-currency-wrapper');
+
+var $CESTquestionDD = $('#CEST-question');
+var $CESTFullSection = $('#CEST-extender-form');
+
+// Is it an IT Contractor drop down
+var $ITContractorDD = $('#IT_Contractor-question');
+var $ITContractorSection = $('#ITContractor-questions-section');
+
+// Ever worked for Bauer
+var $EverWorkedForBauerDD = $('#ever-worked-for-Bauer');
+// if yes, when
+var $everWorkedDate = $('#ever-worked-date-wrapper');
+
+
+
 
 // Functions to toggle hide or show of certain sections depending on which option is selected
 // Hide section, if selected option = "YES"
-function hideIfYes(selectedOption, choice, section) {
+function showIfNo(selectedOption, choice, section) {
     if (selectedOption === choice || selectedOption === '') {
         section.hide()
     } else {
+        section.css('display', 'flex'); // otherwise it will display the section as block
         section.show();
     }
 }
@@ -24,6 +40,7 @@ function hideIfYes(selectedOption, choice, section) {
 // Show, if selected option = "YES"
 function showIfYes(selectedOption, choice, section) {
     if (selectedOption === choice) {
+        section.css('display', 'flex');
         section.show();
     } else {
         section.hide();
@@ -35,15 +52,29 @@ function showIfYes(selectedOption, choice, section) {
 
 // if One-Off supplier = YES, show supplier extender form. If not hide all the sections (Freelancer + supplier)
 $oneOffDD.change(function () {
-    hideIfYes(this.value, 'Yes', $supplierSection);
+    showIfNo(this.value, 'Yes', $supplierSection);
 });
 
 // ON CHANGE, show/ hide Freelancer section
 $categoryDD.change(function () {
+    console.log('changed', this.value);
     showIfYes(this.value, 'Contributor/Freelancer', $freelancerSection);
 })
 
 // ON CHANGE, show/hide other currency input
 $currencyDD.change(function () {
     showIfYes(this.value, 'Other', $otherCurrInp);
+})
+
+// ON CHANGE, show/hide other CEST section
+$CESTquestionDD.change(function () {
+    showIfYes(this.value, 'Yes', $CESTFullSection)
+})
+
+$ITContractorDD.change(function () {
+    showIfYes(this.value, 'Yes', $ITContractorSection)
+})
+
+$EverWorkedForBauerDD.change(function () {
+    showIfYes(this.value, 'Yes', $everWorkedDate);
 })
