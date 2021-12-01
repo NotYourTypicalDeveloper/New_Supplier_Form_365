@@ -2,8 +2,9 @@ html {
     box-sizing: border-box;
 }
 
-.flex {
+.flex-end {
     display: flex;
+    justify-content: flex-end;
 }
 
 html,
@@ -160,10 +161,10 @@ svg {
     background-color: #32597B;
     width: 160px;
     font-weight: 500;
-    height: 40px;
+    height: 50px;
     letter-spacing: .5px;
     color: white;
-    
+    margin: 2em;
     /* for shiny effect */
     overflow: hidden;
     position: relative;
@@ -180,7 +181,6 @@ svg {
     top: 0;
     filter: blur(5px);
     transform: translateX(-100px) skew(-15deg);
-
 }
 
 
@@ -215,5 +215,11 @@ svg {
     border-radius: 10px;
     padding: 2em;
     top: 3em;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
 }

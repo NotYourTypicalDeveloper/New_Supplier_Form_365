@@ -23,6 +23,9 @@ var $EverWorkedForBauerDD = $('#ever-worked-for-Bauer');
 // if yes, when
 var $everWorkedDate = $('#ever-worked-date-wrapper');
 
+var $IRC35Question = $('#CEST-radiopres-question');
+var $IRC35Date = $('#IRC35-date-wrapper');
+
 
 
 
@@ -77,4 +80,8 @@ $ITContractorDD.change(function () {
 
 $EverWorkedForBauerDD.change(function () {
     showIfYes(this.value, 'Yes', $everWorkedDate);
+})
+
+$IRC35Question.change(function () {
+    showIfYes(this.value, 'Yes', $IRC35Date)
 })
