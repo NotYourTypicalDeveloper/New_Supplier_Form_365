@@ -60,7 +60,6 @@ $oneOffDD.change(function () {
 
 // ON CHANGE, show/ hide Freelancer section
 $categoryDD.change(function () {
-    console.log('changed', this.value);
     showIfYes(this.value, 'Contributor/Freelancer', $freelancerSection);
 })
 

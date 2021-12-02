@@ -74,8 +74,9 @@
           <!-- Employee Name -->
           <div>
             <div class="form-group col">
-              <label>Your Name*</label>
-              <input id="typeAhead" class="form-control" name="employee_name" type="text" placeholder="Type name" />
+              <label for="employee_name">Your Name*</label>
+              <input name="" id="typeAhead" class="form-control" name="employee_name" type="text"
+                placeholder="Type name" />
             </div>
           </div>
 
@@ -84,8 +85,8 @@
           <!-- Company code -->
           <div>
             <div class="form-group col">
-              <label>Company Code</label>
-              <select id="company-code" class="form-control">
+              <label for="company_code">Company Code</label>
+              <select name="company_code" id="company-code" class="form-control">
                 <option selected="selected" value="">Please Select...</option>
                 <option>Choice 1</option>
                 <option>Choice 2</option>
@@ -96,8 +97,8 @@
           <!-- Supplier request reviewer -->
           <div>
             <div class="form-group col">
-              <label>Supplier request reviewer</label>
-              <select id="reviewer-input" class="form-control">
+              <label for="reviewer">Supplier request reviewer</label>
+              <select name="reviewer" id="reviewer-input" class="form-control">
                 <option selected="selected" value="">Please Select...</option>
                 <option>Choice 1</option>
                 <option>Choice 2</option>
@@ -149,8 +150,8 @@
 
         <div class="col-lg-4 col-md-3 col-sm-4">
           <div class="form-group">
-            <label>Category *</label>
-            <select id="category" class="form-control">
+            <label for="category">Category *</label>
+            <select name="category" id="category" class="form-control">
               <option selected="selected" value="">Please select</option>
               <option value="Standard">Standard</option>
               <option value="Contributor/Freelancer">Contributor/Freelancer</option>
@@ -164,8 +165,8 @@
         <div class="col-lg-4 col-md-3 col-sm-4">
           <div class="form-group">
 
-            <label>Is this a one-off supplier? *</label>
-            <select id="oneoff" class="form-control">
+            <label for="one_off">Is this a one-off supplier? *</label>
+            <select name="one_off" id="oneoff" class="form-control">
               <option selected="selected" value="">Please select</option>
               <option value="Yes">Yes</option> <!-- if YES => hide the whole supplier extender form ***-->
               <option value="No">No</option>
@@ -185,8 +186,8 @@
         <section id="freelancer-section" class="row">
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>What type of Freelance service is this? *</label>
-              <select id="service-type-input" class="form-control">
+              <label for="service_type">What type of Freelance service is this? *</label>
+              <select name="service_type" id="service-type-input" class="form-control">
                 <option selected="selected" value="">Please select</option>
                 <option value="Advertising Production">Advertising Production</option>
                 <option value="Agency">Agency</option>
@@ -212,8 +213,8 @@
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Does this supplier work at a Bauer location? *</label>
-              <select id="work-Bauer-location" class="form-control">
+              <label for="bauer-location-question">Does this supplier work at a Bauer location? *</label>
+              <select name="bauer-location-question" id="work-Bauer-location" class="form-control">
                 <option selected="selected" value="">Please select</option>
                 <option value="No">No</option>
                 <option value="Yes">Yes</option>
@@ -223,8 +224,8 @@
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Is Bauer responsible for payment of tax and NI? *</label>
-              <select id="tax-ni" class="form-control">
+              <label for="tax_NI">Is Bauer responsible for payment of tax and NI? *</label>
+              <select name="tax_NI" id="tax-ni" class="form-control">
                 <option selected="selected" value="">Please select</option>
                 <option value="No">No</option>
                 <option value="Yes">Yes</option>
@@ -234,8 +235,8 @@
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Does this supplier use Bauer equipment? *</label>
-              <select id="bauer-equip" class="form-control">
+              <label for="bauer_equip">Does this supplier use Bauer equipment? *</label>
+              <select name="bauer_equip" id="bauer-equip" class="form-control">
                 <option selected="selected" value="">Please select</option>
                 <option value="No">No</option>
                 <option value="Yes">Yes</option>
@@ -245,8 +246,8 @@
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Is this supplier on a fixed term or permanent contract? *</label>
-              <select id="fix-perm" class="form-control">
+              <label for="fix_perm">Is this supplier on a fixed term or permanent contract? *</label>
+              <select name="fix_perm" id="fix-perm" class="form-control">
                 <option selected="selected" value="">Please select</option>
                 <option value="N/A">N/A</option>
                 <option value="Fixed">Fixed</option>
@@ -256,39 +257,37 @@
           </div>
           <br>
           <p class="container font-weight-bold">A decision on the taxable status of this Contributor / Freelancer will
-            not
-            be made
-            as a result of the the responses given above.
+            not be made as a result of the the responses given above.
 
           </p>
 
         </section>
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Supplier Name *</label>
-            <input id="supplier-name" class="form-control" type="text" placeholder="Type name" />
+            <label for="supplier_name">Supplier Name *</label>
+            <input name="supplier_name" id="supplier-name" class="form-control" type="text" placeholder="Type name" />
           </div>
 
         </div>
         <!-- Is this a one-off supplier? * - if "No" selected, then hide the rest of the section -->
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label> Phone *</label>
-            <input id="supplier-phone" class="form-control" type="text" />
+            <label for="supplier_phone"> Phone *</label>
+            <input name="supplier_phone" id="supplier-phone" class="form-control" type="text" />
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
 
-            <label>E-mail address *</label>
-            <input id="supplier-email" class="form-control" type="text" />
+            <label for="">E-mail address *</label>
+            <input name="" id="supplier-email" class="form-control" type="text" />
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Address *</label>
+            <label for="">Address *</label>
             <textarea id="supplier-address" class="form-control" rows="3"></textarea>
           </div>
 
@@ -296,44 +295,44 @@
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Postcode *</label>
-            <input type="text" id="postcode" class="form-control" />
+            <label for="">Postcode *</label>
+            <input name="" type="text" id="postcode" class="form-control" />
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Payment Address (if different to above)</label>
+            <label for="">Payment Address (if different to above)</label>
             <textarea id="payment-address" class="form-control" rows="3"></textarea>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Payment postcode *</label>
-            <input type="text" id="paymt-postcode" class="form-control" />
+            <label for="">Payment postcode *</label>
+            <input name="" type="text" id="paymt-postcode" class="form-control" />
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>CRN (Company Registration Number) *</label>
-            <input id="crn" class="form-control" type="text" />
+            <label for="">CRN (Company Registration Number) *</label>
+            <input name="" id="crn" class="form-control" type="text" />
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>VAT Number (if registered) *</label>
-            <input id="VAT" class="form-control" type="text" />
+            <label for="">VAT Number (if registered) *</label>
+            <input name="" id="VAT" class="form-control" type="text" />
           </div>
         </div>
 
         <div class="col-lg-4 col-md-3 col-sm-4">
           <div class="form-group">
 
-            <label>Is this a self-billing supplier? *</label>
-            <select id="selfbill-input" class="form-control">
+            <label for="">Is this a self-billing supplier? *</label>
+            <select name="" id="selfbill-input" class="form-control">
               <option selected="selected" "">Please select</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -343,8 +342,8 @@
 
         <div class="col-lg-4 col-md-3 col-sm-4">
           <div class="form-group">
-            <label>Is this a self-billing supplier? *</label>
-            <select id="selfbill-input" class="form-control">
+            <label for="">Is this a self-billing supplier? *</label>
+            <select name="" id="selfbill-input" class="form-control">
               <option selected="selected" value="">Please select</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -354,8 +353,8 @@
 
         <div class="col-lg-4 col-md-3 col-sm-4">
           <div class="form-group">
-            <label>What currency will the supplier need to be paid in? *</label>
-            <select id="currency-input" class="form-control">
+            <label for="">What currency will the supplier need to be paid in? *</label>
+            <select name="" id="currency-input" class="form-control">
               <option selected="selected" value="GBP">No</option>
               <option value="EUR">EUR</option>
               <option value="USD">USD</option>
@@ -368,8 +367,8 @@
         <!-- HIDDEN FIELD - If "other currency" is selected, show this  -->
         <div id="other-currency-wrapper" class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Please specify the currency the supplier will need to be paid in *</label>
-            <input type="text" id="other-currency" class="form-control" />
+            <label for="">Please specify the currency the supplier will need to be paid in *</label>
+            <input name="" type="text" id="other-currency" class="form-control" />
           </div>
         </div>
 
@@ -385,8 +384,8 @@
         <!-- Is it a personal service provided? (CEST) Question -->
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Is it a personal service provided? (CEST)? *</label>
-            <select id="CEST-question" class="form-control">
+            <label for="">Is it a personal service provided? (CEST)? *</label>
+            <select name="" id="CEST-question" class="form-control">
               <option selected="selected" value="">Please select</option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
@@ -400,8 +399,8 @@
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Is it an IT contractor? *</label>
-            <select id="IT_Contractor-question" class="form-control">
+            <label for="">Is it an IT contractor? *</label>
+            <select name="" id="IT_Contractor-question" class="form-control">
               <option selected="selected" value="">Please select</option>
               <option value="No">No</option>
               <option value="Yes">Yes</option> <!-- If YES: display IT contractor special questions-->
@@ -416,8 +415,8 @@
         <div id="ITContractor-questions-section" class="row">
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Has the diversity and inclusion policy been completed? *</label>
-              <select id="diversity-question" class="form-control">
+              <label for="">Has the diversity and inclusion policy been completed? *</label>
+              <select name="" id="diversity-question" class="form-control">
                 <option selected="selected" value="">Please select</option>
                 <option value="Yes">Yes</option> <!-- IF selected by user, show date field -->
                 <option value="No">No</option>
@@ -428,8 +427,8 @@
           <!-- HIDDEN FIELD - will show if "Diversity policy" = "YES" -->
           <div id="diversity-date-wrapper" class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>If yes, when? *</label>
-              <input type="date" id="diversity-date" class="form-control" />
+              <label for="">If yes, when? *</label>
+              <input name="" type="date" id="diversity-date" class="form-control" />
             </div>
           </div>
 
@@ -437,7 +436,7 @@
           <!-- deliverables -->
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Deliverables *</label>
+              <label for="">Deliverables *</label>
               <textarea id="deliverables" class="form-control" rows="3"></textarea>
             </div>
           </div>
@@ -445,8 +444,8 @@
           <!-- are you UK citizen?  -->
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Is the contractor citizen of the UK? *</label>
-              <select id="UKCitizen" class="form-control">
+              <label for="">Is the contractor citizen of the UK? *</label>
+              <select name="" id="UKCitizen" class="form-control">
                 <option selected="selected" value="">Please select</option>
                 <option value="No">No</option>
                 <option value="Yes">Yes</option>
@@ -457,8 +456,8 @@
           <!-- Do you have work authorization?  -->
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Are you authorized to work in the UK? *</label>
-              <select id="authorized-work" class="form-control">
+              <label for="">Are you authorized to work in the UK? *</label>
+              <select name="" id="authorized-work" class="form-control">
                 <option selected="selected" value="">Please select</option>
                 <option value="No">No</option>
                 <option value="Yes">Yes</option>
@@ -469,8 +468,8 @@
           <!-- Has contractor ever worked for Bauer? -->
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Has the contractor ever worked for Bauer? *</label>
-              <select id="ever-worked-for-Bauer" class="form-control">
+              <label for="">Has the contractor ever worked for Bauer? *</label>
+              <select name="" id="ever-worked-for-Bauer" class="form-control">
                 <option selected="selected" value="">Please select</option>
                 <option value="No">No</option>
                 <option value="Yes">Yes</option>
@@ -482,8 +481,8 @@
         <!-- Hidden field, will show if "ever worked for Bauer" = Yes -->
         <div id="ever-worked-date-wrapper" class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>If yes, when? *</label>
-            <input type="date" id="ever-worked-date" class="form-control" />
+            <label for="">If yes, when? *</label>
+            <input name="" type="date" id="ever-worked-date" class="form-control" />
           </div>
         </div>
 
@@ -493,36 +492,36 @@
         <section id="basic-info-CEST" class="row">
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Contractor's Name *</label>
-              <input type="text" id="contractor-name" class="form-control" />
+              <label for="">Contractor's Name *</label>
+              <input name="" type="text" id="contractor-name" class="form-control" />
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Job Title *</label>
-              <input type="text" id="job-title" class="form-control" />
+              <label for="">Job Title *</label>
+              <input name="" type="text" id="job-title" class="form-control" />
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Start Date *</label>
-              <input type="date" id="start-date" class="form-control" />
+              <label for="">Start Date *</label>
+              <input name="" type="date" id="start-date" class="form-control" />
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>End Date *</label>
-              <input type="date" id="end-date" class="form-control" />
+              <label for="">End Date *</label>
+              <input name="" type="date" id="end-date" class="form-control" />
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Notice Period *</label>
-              <select id="notice" class="form-control">
+              <label for="">Notice Period *</label>
+              <select name="" id="notice" class="form-control">
                 <option selected="selected" value="1 week">1 week</option>
                 <option selected="selected" value="2 weeks">2 weeks</option>
                 <option selected="selected" value="3 weeks">3 weeks</option>
@@ -533,71 +532,71 @@
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Day rate *</label>
-              <input type="text" id="day-rate" class="form-control" />
+              <label for="">Day rate *</label>
+              <input name="" type="text" id="day-rate" class="form-control" />
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Expected Contracted Hours *</label>
-              <input type="text" id="hours" class="form-control" />
+              <label for="">Expected Contracted Hours *</label>
+              <input name="" type="text" id="hours" class="form-control" />
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Services to be provided *</label>
+              <label for="">Services to be provided *</label>
               <textarea id="services" class="form-control" rows="3"></textarea>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Any other relevant information *</label>
+              <label for="">Any other relevant information *</label>
               <textarea id="other-info" class="form-control" rows="3"></textarea>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Location *</label>
-              <input type="text" id="location" class="form-control" />
+              <label for="">Location *</label>
+              <input name="" type="text" id="location" class="form-control" />
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Contract Length *</label>
-              <input type="text" id="contract-length" class="form-control" />
+              <label for="">Contract Length *</label>
+              <input name="" type="text" id="contract-length" class="form-control" />
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Agency Name</label>
-              <input type="text" id="agency-name" class="form-control" />
+              <label for="">Agency Name</label>
+              <input name="" type="text" id="agency-name" class="form-control" />
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Agency Address</label>
+              <label for="">Agency Address</label>
               <textarea id="agency-address" class="form-control" rows="3"></textarea>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Agency point of contact and reports</label>
+              <label for="">Agency point of contact and reports</label>
               <textarea id="agency-contact" class="form-control" rows="3"></textarea>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>Has the CEST or Radio Presenter questionnaire been completed? *</label>
-              <select id="CEST-radiopres-question" class="form-control">
+              <label for="">Has the CEST or Radio Presenter questionnaire been completed? *</label>
+              <select name="" id="CEST-radiopres-question" class="form-control">
                 <option selected="selected" value="">Please select</option>
                 <option value="Yes">Yes</option> <!-- IF selected by user, show date field -->
                 <option value="No">No</option>
@@ -609,8 +608,8 @@
           <!-- HIDDEN FIELD - will show if Has the CEST or Radio Presenter questionnaire been completed? = "YES" (IRC date of completion)-->
           <div id="IRC35-date-wrapper" class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label>If yes, when? Please attach a copy *</label>
-              <input type="date" id="IRC35-completion-date" class="form-control" />
+              <label for="">If yes, when? Please attach a copy *</label>
+              <input name="" type="date" id="IRC35-completion-date" class="form-control" />
             </div>
           </div>
         </section>
@@ -626,41 +625,41 @@
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Payee Name *</label>
-            <input type="text" id="payee-name" class="form-control" />
+            <label for="">Payee Name *</label>
+            <input name="" name="" type="text" id="payee-name" class="form-control" />
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Name of Bank *</label>
-            <input type="text" id="bank-name" class="form-control" />
+            <label for="">Name of Bank *</label>
+            <input name="" name="" type="text" id="bank-name" class="form-control" />
           </div>
         </div>
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Account Number *</label>
-            <input type="text" id="bank-account-number" class="form-control" />
+            <label for="">Account Number *</label>
+            <input name="" name="" type="text" id="bank-account-number" class="form-control" />
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Bank Address (including postcode)</label>
+            <label for="">Bank Address (including postcode)</label>
             <textarea id="bank-address" class="form-control" rows="3"></textarea>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Sort Code *</label>
-            <input type="text" id="sort-code" class="form-control" />
+            <label for="">Sort Code *</label>
+            <input name="" name="" type="text" id="sort-code" class="form-control" />
           </div>
         </div>
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Building Society Roll Number</label>
-            <input type="text" id="roll-number" class="form-control" />
+            <label for="">Building Society Roll Number</label>
+            <input name="" name="" type="text" id="roll-number" class="form-control" />
           </div>
         </div>
 
@@ -676,7 +675,7 @@
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label>Description of purchases *</label>
+            <label for="">Description of purchases *</label>
             <textarea id="" class="form-control" rows="4"></textarea>
           </div>
         </div>
@@ -710,12 +709,12 @@
 
       </section>
 
+
+      <!-- Submit button -->
+
+      <div class="flex-end"> <button class="btn submit-btn" id="submit-btn">SUBMIT</button></div>
     </form>
 
-
-    <!-- Submit button -->
-
-    <div class="flex-end"> <button class="btn submit-btn" id="submit-btn">SUBMIT</button></div>
 
 
 
@@ -744,7 +743,9 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
     integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
   <!-- jQuery validator -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
+    integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script type="text/javascript" src="./Scripts/new-supplier-form.js"></script>
 
