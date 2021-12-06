@@ -13,7 +13,10 @@ $(document).ready(function () {
             bauer_equip: "required",
             fix_perm: "required",
             supplier_name: "required",
-            supplier_phone: "required",
+            supplier_phone: {
+                required: true,
+                number: true
+            },
             supplier_email: {
                 required: true,
                 email: true
@@ -54,30 +57,37 @@ $(document).ready(function () {
             CEST_radiopres_question: "required",
             IRC_completion_date: "required",
 
-            location: "required",
-            location: "required",
-            location: "required",
-            location: "required",
-            location: "required",
-            location: "required",
-            location: "required",
-            location: "required",
-            location: "required",
-            location: "required",
-            
+            payee_name: "required",
+            bank_name: "required",
 
+            bank_account_number: {
+                required: true,
+                number: true,
+                minlength: 8,
+                maxlength: 10,
+            },
 
+            bank_address: "required",
 
+            sort_code: {
+                required: true,
+                number: true,
+                minlength: 6,
+                maxlength: 6,
+            },
 
-
-
+            roll_number: "required",
+            purchases_desc: "required",
 
         },
 
         messages: {
             employee_name: "You must enter and select a valid Bauer employee",
             reviewer: "Please select a reviewer from the list",
+            supplier_email: "Please ensure the email address is in the correct format",
             start_date: "Please pick a date",
+            end_date: "Please pick a date",
+
         }
 
     });
