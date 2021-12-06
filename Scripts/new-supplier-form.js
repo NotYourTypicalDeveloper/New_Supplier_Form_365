@@ -30,18 +30,9 @@ var $IRC35Date = $('#IRC35-date-wrapper');
 
 
 // Functions to toggle hide or show of certain sections depending on which option is selected
-// Hide section, if selected option = "YES"
-function showIfNo(selectedOption, choice, section) {
-    if (selectedOption === choice || selectedOption === '') {
-        section.hide()
-    } else {
-        section.css('display', 'flex'); // otherwise it will display the section as block
-        section.show();
-    }
-}
 
 // Show, if selected option = "YES"
-function showIfYes(selectedOption, choice, section) {
+function showHide(selectedOption, choice, section) {
     if (selectedOption === choice) {
         section.css('display', 'flex');
         section.show();
@@ -55,32 +46,32 @@ function showIfYes(selectedOption, choice, section) {
 
 // if One-Off supplier = YES, show supplier extender form. If not hide all the sections (Freelancer + supplier)
 $oneOffDD.change(function () {
-    showIfNo(this.value, 'Yes', $supplierSection);
+    showHide(this.value, 'No', $supplierSection);
 });
 
 // ON CHANGE, show/ hide Freelancer section
 $categoryDD.change(function () {
-    showIfYes(this.value, 'Contributor/Freelancer', $freelancerSection);
+    showHide(this.value, 'Contributor/Freelancer', $freelancerSection);
 })
 
 // ON CHANGE, show/hide other currency input
 $currencyDD.change(function () {
-    showIfYes(this.value, 'Other', $otherCurrInp);
+    showHide(this.value, 'Other', $otherCurrInp);
 })
 
 // ON CHANGE, show/hide other CEST section
 $CESTquestionDD.change(function () {
-    showIfYes(this.value, 'Yes', $CESTFullSection)
+    showHide(this.value, 'Yes', $CESTFullSection)
 })
 
 $ITContractorDD.change(function () {
-    showIfYes(this.value, 'Yes', $ITContractorSection)
+    showHide(this.value, 'Yes', $ITContractorSection)
 })
 
 $EverWorkedForBauerDD.change(function () {
-    showIfYes(this.value, 'Yes', $everWorkedDate);
+    showHide(this.value, 'Yes', $everWorkedDate);
 })
 
 $IRC35Question.change(function () {
-    showIfYes(this.value, 'Yes', $IRC35Date)
+    showHide(this.value, 'Yes', $IRC35Date)
 })
