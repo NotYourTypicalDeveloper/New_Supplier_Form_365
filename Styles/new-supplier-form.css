@@ -2,6 +2,13 @@ html {
     box-sizing: border-box;
 }
 
+/* Error messages */
+.error {
+    color: red;
+    font-weight: 400;
+    font-style: italic;
+}
+
 .flex-end {
     display: flex;
     justify-content: flex-end;
@@ -31,7 +38,6 @@ section {
 
 
 /* Header */
-
 header {
     background-color: #0E1E24;
     padding-top: 4em;

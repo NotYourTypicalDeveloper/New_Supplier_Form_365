@@ -96,7 +96,7 @@
           <!-- Supplier request reviewer -->
           <div>
             <div class="form-group col">
-              <label for="reviewer">Supplier request reviewer</label>
+              <label for="reviewer">Supplier request reviewer *</label>
               <select name="reviewer" id="reviewer-input" class="form-control">
                 <option selected="selected" value="">Please Select...</option>
                 <option>Choice 1</option>
@@ -212,8 +212,8 @@
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label for="bauer-location-question">Does this supplier work at a Bauer location? *</label>
-              <select name="bauer-location-question" id="work-Bauer-location" class="form-control">
+              <label for="bauer_location_question">Does this supplier work at a Bauer location? *</label>
+              <select name="bauer_location_question" id="work-Bauer-location" class="form-control">
                 <option selected="selected" value="">Please select</option>
                 <option value="No">No</option>
                 <option value="Yes">Yes</option>
@@ -294,15 +294,15 @@
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label for="supplier-postcode">Postcode *</label>
-            <input name="supplier-postcode" type="text" id="postcode" class="form-control" />
+            <label for="supplier_postcode">Postcode *</label>
+            <input name="supplier_postcode" type="text" id="postcode" class="form-control" />
           </div>
         </div>
 
         <div class="col-md-6 col-lg-4 col-xl-4">
           <div class="form-group">
-            <label for="">Payment Address (if different to above)</label>
-            <textarea id="payment-address" class="form-control" rows="3"></textarea>
+            <label for="payment_address">Payment Address (if different to above)</label>
+            <textarea name="payment_address" id="payment-address" class="form-control" rows="3"></textarea>
           </div>
         </div>
 
@@ -420,7 +420,6 @@
             </div>
           </div>
 
-
           <!-- deliverables -->
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
@@ -494,15 +493,15 @@
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label for="">Start Date *</label>
-              <input name="" type="date" id="start-date" class="form-control" />
+              <label for="start_date">Start Date *</label>
+              <input name="start_date" type="date" id="start-date" class="form-control" />
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 col-xl-4">
             <div class="form-group">
-              <label for="">End Date *</label>
-              <input name="" type="date" id="end-date" class="form-control" />
+              <label for="end_date">End Date *</label>
+              <input name="end_date" type="date" id="end-date" class="form-control" />
             </div>
           </div>
 
@@ -510,6 +509,7 @@
             <div class="form-group">
               <label for="notice_period">Notice Period *</label>
               <select name="notice_period" id="notice" class="form-control">
+                <option selected="selected" value="">Please select</option>
                 <option selected="selected" value="1 week">1 week</option>
                 <option selected="selected" value="2 weeks">2 weeks</option>
                 <option selected="selected" value="3 weeks">3 weeks</option>
