@@ -74,36 +74,39 @@
                 <div class="modal-header">
                     <h4 class="modal-title" id="myModalLabel">Supplier / Contributor - Search form</h4>
 
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
                 </div>
                 <div class="modal-body">
                     <p>If you need supplier linking to your company code, please email: bauervmaint@bauerservices.co.uk
                     </p>
                     <p>Complete one of bother of the fields below to search Proactis for existing suppliers and
                         contributors.</p>
+                    <div class="modal-input-wrapper">
+                        <div>
+                            <div class="form-group col">
+                                <label for="modal_supp_name">Supplier Name </label>
+                                <input name="modal_supp_name" id="modal-supplier-name-inp" class="form-control"
+                                    type="text" placeholder="Enter partial name if full name unknown" />
+                            </div>
+                        </div>
+                        <div>
 
-                    <div>
-                        <div class="form-group col">
-                            <label for="modal_supp_name">Supplier Name </label>
-                            <input name="modal_supp_name" id="modal-supplier-name-inp" class="form-control" type="text"
-                                placeholder="Enter partial name if sull name unknown" />
+                            <div class="form-group col">
+                                <label for="modal_postcode">Postcode</label>
+                                <input name="modal_postcode" id="modal-postcode-inp" class="form-control" type="text" />
+                            </div>
                         </div>
                     </div>
-                    <div>
-
-                        <div class="form-group col">
-                            <label for="modal_postcode">Supplier Name </label>
-                            <input name="modal_postcode" id="modal-postcode-inp" class="form-control" type="text" />
-                        </div>
-                    </div>
-                    <button id="modal-search-btn" class="btn btn-info"><i class="fas fa-search"></i> Search </button>
-
-                    <div class="results">
+                    <button id="modal-search-btn" class="btn btn-info"><i class="fas fa-search"></i> Search
+                    </button>
+                    <br>
+                    <div id="modal-results">
                         <p>Results will be shown here.</p>
                     </div>
 
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <div class="modal-footer">
                     <div class="footer-inner">

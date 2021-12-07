@@ -66,9 +66,26 @@ header>h1 {
     color: red;
 }
 
+/* Modal */
+.modal-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
+}
+
 .modal-footer {
     background-color: #054861;
     color: silver;
+}
+
+#modal-search-btn {
+    width: 150px;
+    float: right;
+}
+
+#modal-results {
+    margin-top: 2em;
 }
 
 /* __________STYLING OF THE SUPPLIER FORM __________ */
