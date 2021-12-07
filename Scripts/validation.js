@@ -2,7 +2,11 @@ $(document).ready(function () {
 
     $mainForm.validate({
         rules: {
-            employee_name: "required",
+            employee_name: {
+                required: true,
+                minLength: 7
+
+            },
             reviewer: "required",
             category: "required",
             one_off: "required",

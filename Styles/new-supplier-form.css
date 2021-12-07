@@ -25,6 +25,10 @@ section {
     padding-bottom: 1rem;
 }
 
+#logo {
+    width: 90px;
+}
+
 /* HIDDEN BY DEFAULT */
 
 #freelancer-section,
@@ -60,6 +64,11 @@ header>h1 {
 
 .disclaimer>p:nth-child(4) {
     color: red;
+}
+
+.modal-footer {
+    background-color: #054861;
+    color: silver;
 }
 
 /* __________STYLING OF THE SUPPLIER FORM __________ */
