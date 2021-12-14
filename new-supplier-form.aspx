@@ -9,13 +9,13 @@
 
     <!-- tab icon -->
     <link rel="shortcut icon" href="/sites/UK-Forms/NewSuppliers/SiteAssets/Images/favicon.ico">
-    <!--  -->
-    Font Awesome CSS
+    <!-- 
+    Font Awesome CSS -->
     <link rel="stylesheet" href="/sites/UK-Forms/NewSuppliers/SiteAssets/FontAwesomeCSS/fontawesome.css"
         type="text/css">
     <link rel="stylesheet" href="/sites/UK-Forms/NewSuppliers/SiteAssets/FontAwesomeCSS/solid.css" type="text/css">
-    <!--  -->
-    our external css stylesheets
+    <!--  
+    our external css stylesheets-->
     <link rel="stylesheet" href="/sites/UK-Forms/NewSuppliers/SiteAssets/Styles/new-supplier-form.css"
         type="text/css" />
 
@@ -39,7 +39,7 @@
 
     <header class="header">
 
-        <h1><img id="logo" src="./sites/UK-Forms/NewSuppliers/SiteAssets/__sitelogo__BMG_Logo_Blue_neg_CMYK.png"
+        <h1><img id="logo" src="/sites/UK-Forms/NewSuppliers/SiteAssets/Images/__sitelogo__BMG_Logo_Blue_neg_CMYK.png"
                 alt="bauer-logo">New Supplier /
             Contributor
             > Request Form </h1>
@@ -775,7 +775,7 @@
 
             <!-- Submit button -->
 
-            <div class="flex-end"> <button id="submit-btn" class="btn submit-btn" type="submit">SUBMIT</button></div>
+            <div class="flex-end"> <button id="submit-btn" class="submit-btn" type="submit">SUBMIT</button></div>
         </form>
 
 

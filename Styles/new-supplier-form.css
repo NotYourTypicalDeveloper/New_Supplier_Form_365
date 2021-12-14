@@ -119,10 +119,10 @@ label {
 }
 
 /* supplier extender form */
-#supplier-extender-section,
-#freelancer-section {
-    border: 1px solid #89dce9;
-}
+/* #supplier-extender-section, */
+/* #freelancer-section { */
+/* border: 1px solid #89dce9; */
+/* } */
 
 /* // remove margins from these sections will realign inputs of nested section */
 #freelancer-section,
