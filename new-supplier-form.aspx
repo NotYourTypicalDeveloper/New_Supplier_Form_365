@@ -137,21 +137,16 @@
                         <div class="form-group col">
                             <label for="employee_name">Your Name*</label>
                             <input name="employee_name" id="typeAhead" class="form-control" type="text"
-                                placeholder="Type name" />
+                                placeholder="Please start typing a name and select from the list of suggestion" />
                         </div>
                     </div>
-
-                    <!-- add error message -->
 
                     <!-- Company code -->
                     <div>
                         <div class="form-group col">
                             <label for="company_code">Company Code</label>
-                            <select name="company_code" id="company-code" class="form-control">
-                                <option selected="selected" value="">Please Select...</option>
-                                <option>Choice 1</option>
-                                <option>Choice 2</option>
-                            </select>
+
+                            <input name="company_code" id="company-code" class="form-control" type="text" />
                         </div>
                     </div>
 
@@ -160,9 +155,7 @@
                         <div class="form-group col">
                             <label for="reviewer">Supplier request reviewer *</label>
                             <select name="reviewer" id="reviewer-input" class="form-control">
-                                <option selected="selected" value="">Please Select...</option>
-                                <option>Choice 1</option>
-                                <option>Choice 2</option>
+
                             </select>
                         </div>
                     </div>
@@ -387,6 +380,15 @@
 
                 <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="form-group">
+                        <label for="CenshareDC5">Censhare / DC5 Industry Code (Magazines only) *</label>
+                        <select name="CenshareDC5" id="CenshareDC5" class="form-control">
+                            <!-- populate the options here -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="form-group">
                         <label for="VAT_number">VAT Number (if registered) *</label>
                         <input name="VAT_number" id="VAT-number" class="form-control" type="text" />
                     </div>
@@ -403,6 +405,19 @@
                         </select>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-3 col-sm-4">
+                    <div class="form-group">
+
+                        <label for="foreign_perf_question">Is this supplier a foreign performer? *</label>
+                        <select name="foreign_perf_question" id="foreign-perf-input" class="form-control">
+                            <option selected="selected" value="">Please select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                </div>
+
+
 
                 <div class="col-lg-4 col-md-3 col-sm-4">
                     <div class="form-group">
@@ -410,11 +425,19 @@
                         <select name="currency" id="currency-input" class="form-control">
                             <option selected="selected" value="GBP">GBP</option>
                             <option value="EUR">EUR</option>
-                            <option value="USD">USD</option>
+                            <option value="USD">USD</option> 
                             <option value="AUD">AUD</option>
                             <option value="Other">Other</option>
                             <!-- if OTHER is selected => populate specify currency field-->
                         </select>
+                    </div>
+                </div>
+
+                <!-- HIDDEN, if USD is selected, show this -->
+                <div id="routing-wrapper" class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="form-group">
+                        <label for="routing_question">To make payment in USD, please enter the routing number *</label>
+                        <input name="routing_question" type="text" id="routing-question" class="form-control" />
                     </div>
                 </div>
 
@@ -701,7 +724,7 @@
                 <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="form-group">
                         <label for="bank_account_number">Account Number *</label>
-                        <input name="bank_account_number" type="text" id="bank-account-number" class="form-control" />
+                        <input name="bank_account_number" type="number" id="bank-account-number" class="form-control" />
                     </div>
                 </div>
 
@@ -715,13 +738,25 @@
                 <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="form-group">
                         <label for="sort_code">Sort Code *</label>
-                        <input name="sort_code" name="" type="text" id="sort-code" class="form-control" />
+                        <input name="sort_code" type="number" id="sort-code" class="form-control" />
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="form-group">
                         <label for="roll_number">Building Society Roll Number</label>
-                        <input name="roll_number" name="" type="text" id="roll-number" class="form-control" />
+                        <input name="roll_number" type="text" id="roll-number" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="form-group">
+                        <label for="IBAN">IBAN</label>
+                        <input name="IBAN" type="text" id="IBAN" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="form-group">
+                        <label for="BIC_code">BIC code</label>
+                        <input name="BIC_code" type="text" id="BIC-code" class="form-control" />
                     </div>
                 </div>
 
@@ -771,11 +806,11 @@
 
 
             </section>
-
+            <p id="error-msg"></p>
 
             <!-- Submit button -->
 
-            <div class="flex-end"> <button id="submit-btn" class="submit-btn" type="submit">SUBMIT</button></div>
+            <div class="flex-end"> <button id="submit-btn" class="submit-btn" type="submit">SUBMIT</button> </div>
         </form>
 
 
@@ -812,7 +847,6 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
     </script>
 
-
     <!-- enables SP.js library -->
     <script src="https://ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js" type="text/javascript"></script>
     <script type="text/javascript" src="/_layouts/15/sp.runtime.js"> </script>
@@ -827,12 +861,15 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 
     <!-- Typeahead -->
-    <script type="text/javascript" src="/sites/UK-Forms/NewProactisUsers/SiteAssets/Scripts/typeahead.bundle.min.js">
+    <script type="text/javascript" src="/sites/UK-Forms/NewSuppliers/SiteAssets/Scripts/typeahead.bundle.min.js">
+    </script>
+    <script type="text/javascript" src="/sites/UK-Forms/NewSuppliers/SiteAssets/Scripts/handlebars-v1.3.0.js">
     </script>
 
-    <script type="text/javascript" src="/sites/UK-Forms/NewSuppliers/SiteAssets/Scripts/new-supplier-form.js"></script>
-    <script type="text/javascript" src="/sites/UK-Forms/NewSuppliers/SiteAssets/Scripts/validation.js"></script>
+<script type="text/javascript" src="/sites/UK-Forms/NewSuppliers/SiteAssets/Scripts/new-supplier-form.js"></script>
+<script type="text/javascript" src="/sites/UK-Forms/NewSuppliers/SiteAssets/Scripts/validation.js"></script>
     <script type="text/javascript" src="/sites/UK-Forms/NewSuppliers/SiteAssets/Scripts/supplier-search.js"></script>
+    <script type="text/javascript" src="/sites/UK-Forms/NewSuppliers/SiteAssets/Scripts/create-item.js"></script>
 
 
 </body>

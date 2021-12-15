@@ -42,21 +42,15 @@ var $empOffice = $('#emp-office');
 var $empPhone = $('#emp-phone');
 var $empCC = $('#emp-CC');
 
+var $routingQuestion = $('#routing-wrapper');
+
 var $reviewerInput = $('#reviewer-input');
 var $censhareInput = $('#CenshareDC5');
 
+var $fileInput = $('#fileinput');
 
-// Functions to toggle hide or show of certain sections depending on which option is selected
+var siteUrl = 'https://bauer.sharepoint.com/sites/UK-Forms/NewSuppliers';
 
-// Show, if selected option = "YES"
-function showHide(selectedOption, choice, section, displayType) {
-    if (selectedOption === choice) {
-        section.css('display', displayType);
-        section.show();
-    } else {
-        section.hide();
-    }
-}
 
 
 // ______ON CHANGE EVENTS - Hide/Show sections 
@@ -78,7 +72,14 @@ $diversityQuestion.change(function () {
 
 // ON CHANGE, show/hide other currency input
 $currencyDD.change(function () {
-    showHide(this.value, 'Other', $otherCurrInp, 'flex');
+    if (this.value === 'Other') {
+        $otherCurrInp.css('display', 'flex');  
+        $routingQuestion.css('display', 'none');
+    } else if (this.value === 'USD') {
+        $routingQuestion.css('display', 'flex');
+        $otherCurrInp.css('display', 'none');
+
+    } 
 })
 
 // ON CHANGE, show/hide other CEST section
@@ -95,8 +96,38 @@ $EverWorkedForBauerDD.change(function () {
 })
 
 $IRC35Question.change(function () {
-    showHide(this.value, 'Yes', $IRC35Date)
+    showHide(this.value, 'Yes', $IRC35Date, 'flex')
 })
+
+
+// on change, display file name as inner text in the "upload" button
+$fileInput.change(function () {
+    displayFileNames();
+});
+
+
+// set typeahead for Employee input  
+setTypeAhead();
+
+// set dropdown menu for SUPPLIER REQUEST REVIEW
+setReviewersDropdown();
+
+//  set dropdown menu for Censhare DC5
+setCenshareDropdown();
+
+
+// :::::::::::::::::::::::::::::::: FUNCTIONS ::::::::::::::::::::::::::::::::
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+// Toggle hide or show of certain sections depending on which option is selected
+
+function showHide(selectedOption, choice, section, displayType) {
+    if (selectedOption === choice) {
+        section.css('display', displayType);
+    } else {
+        section.hide();
+    }
+}
 
 ///////////////////// Typeahead /////////////////////
 
@@ -167,10 +198,9 @@ function EnableEmployeeTypeAhead(target) {
 
     target.on('typeahead:selected typeahead:autocompleted', function (obj, data) {
         target.val(data['DisplayName']);
-        var officeString = data['Office'].split('-')[0]; // get office name and clean up
+        officeString = data['Office'].split('-')[0]; // get office name and clean up
 
-        var companyString = data['Company'];
-        var departmentString = data['Department'];
+        divisionString = `${data['Company']} ${data['Department']}`;
         managerString = data['Manager']; // grab name of the Manager
         var i = managerString.indexOf(',OU=');
         var managerFormatted = managerString.slice(3, i); // return name and firstname, remove extra junk
@@ -178,8 +208,9 @@ function EnableEmployeeTypeAhead(target) {
 
         managerSurname = managerFormatted.substring(j + 1);
         managerForename = managerFormatted.substring(0, j);
+        
         $empManager.text(`${managerForename} ${managerSurname}`);
-        $empDivision.text(`${companyString} ${departmentString}`);
+        $empDivision.text(divisionString);
         $empOffice.text(officeString);
 
         // show the employee details table
@@ -196,7 +227,7 @@ function EnableEmployeeTypeAhead(target) {
 // ____________________ Set SUPPLIER REQUEST VIEWER dropdown menu ____________________
 function setReviewersDropdown() {
     console.log("populating Reviewers list...");
-    var clientContext = new SP.ClientContext("https://bauer.sharepoint.com/sites/UK-Forms/NewSuppliers");
+    var clientContext = new SP.ClientContext(siteUrl);
     reviewerList = clientContext.get_web().get_lists().getByTitle('Supplier Request Reviewers');
     var camlQuery = new SP.CamlQuery();
     camlQuery.set_viewXml(
@@ -219,7 +250,10 @@ function onSetRVDropdownSucceeded(sender, args) {
         var reviewerListItem = listItemEnumerator.get_current();
         eachReviewerName = reviewerListItem.get_item('Title');
         var option = document.createElement("option");
-        option.value = option.text = eachReviewerName;
+        // set the value attribute to the ID of each list item
+        option.value = reviewerListItem.get_id();
+
+        option.text = eachReviewerName;
 
         reviewerInput.add(option); // append options to input
     }
@@ -232,16 +266,6 @@ function onSetRVDropdownSucceeded(sender, args) {
 
 }
 
-function sortOptions(my_options) {
-    my_options.sort(function (a, b) {
-        if (a.text > b.text)
-            return 1;
-        else if (a.text < b.text)
-            return -1;
-        else
-            return 0;
-    });
-}
 
 function onSetRVDropdownFailed(sender, args) {
     alert('Supplier reviewers request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
@@ -251,7 +275,7 @@ function onSetRVDropdownFailed(sender, args) {
 
 function setCenshareDropdown() {
     console.log("populating Censhare code list...");
-    var clientContext = new SP.ClientContext("https://bauer.sharepoint.com/sites/UK-Forms/NewSuppliers");
+    var clientContext = new SP.ClientContext(siteUrl);
     censhareList = clientContext.get_web().get_lists().getByTitle('DC5 Censhare codes');
     var camlQuery = new SP.CamlQuery();
     camlQuery.set_viewXml(
@@ -274,35 +298,42 @@ function onSetCSDropdownSucceeded(sender, args) {
         var censhareListItem = listItemEnumerator.get_current();
         eachCenshareCode = censhareListItem.get_item('Title');
         var option = document.createElement("option");
-        option.value = option.text = eachCenshareCode;
+        option.value = censhareListItem.get_id();
+        option.text = eachCenshareCode;
 
         censhareInput.add(option); // append options to input
     }
 
-    var my_options = $("CenshareDC5 option");
-    sortOptions(my_options);
+    var my_options2 = $("CenshareDC5 option");
+    sortOptions(my_options2);
 
-    $reviewerInput.empty().append(my_options);
-    $reviewerInput.prepend("<option selected value=''>Please Select...</option>");
+    $censhareInput.append(my_options2);
+    $censhareInput.prepend("<option selected value=''>Please Select...</option>");
 
 }
 
+// sort dropdown menu options in ascending order
 function sortOptions(my_options) {
     my_options.sort(function (a, b) {
-        if (a.text > b.text)
+        if (a.text > b.text) {
             return 1;
-        else if (a.text < b.text)
+        } else if (a.text < b.text) {
             return -1;
-        else
+        } else {
             return 0;
-    });
+
+        }
+    })
 }
 
 function onSetRVDropdownFailed(sender, args) {
     alert('Supplier reviewers request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
 }
-// set typeahead for Employee input  
-setTypeAhead();
 
-// set dropdown menu for SUPPLIER REQUEST REVIEW
-setReviewersDropdown();
+
+// Display name of uploaded files on Upload 
+function displayFileNames() {
+    var fileInputDisplay = $fileInput.val();
+    var updatedStr = fileInputDisplay.replace("C:\\fakepath\\", "");
+    $('#fileinput-label > span').html(updatedStr); // update upload btn inner text
+}

@@ -1,10 +1,12 @@
+var $mainForm = $("#newsupp-form");
 $(document).ready(function () {
+    console.log('validation.js is connected');
 
     $mainForm.validate({
         rules: {
             employee_name: {
                 required: true,
-                minLength: 7
+                minlength: 7
 
             },
             reviewer: "required",
@@ -18,8 +20,7 @@ $(document).ready(function () {
             fix_perm: "required",
             supplier_name: "required",
             supplier_phone: {
-                required: true,
-                number: true
+                required: true
             },
             supplier_email: {
                 required: true,
@@ -32,6 +33,7 @@ $(document).ready(function () {
             CRN: "required",
             VAT_number: "required",
             self_billing_question: "required",
+            foreign_perf_question: "required",
             currency: "required",
             other_currency: "required",
 
@@ -82,6 +84,8 @@ $(document).ready(function () {
 
             roll_number: "required",
             purchases_desc: "required",
+            IBAN: "required",
+            BIC_code: "required"
 
         },
 
@@ -92,9 +96,22 @@ $(document).ready(function () {
             start_date: "Please pick a date",
             end_date: "Please pick a date",
 
-        }
+        },
+        
+        submitHandler: function () {
+            createListItem();
+          },
+
+          invalidHandler: function (event, validator) {
+            var errorDiv = $('#error-msg');
+            var errors = validator.numberOfInvalids();
+            if (errors) {
+              errorDiv.html('PLEASE CHECK THE ' + errors + ' ERROR(S) HIGHLIGHTED IN RED').show();
+            } else {
+              errorDiv.hide();
+            }
+          }
 
     });
 });
 
-var $mainForm = $("#newsupp-form");

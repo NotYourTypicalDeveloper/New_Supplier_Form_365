@@ -36,7 +36,10 @@ section {
 #ITContractor-questions-section,
 #ever-worked-date-wrapper,
 #IRC35-date-wrapper,
-#other-currency-wrapper {
+#other-currency-wrapper,
+#employeeDetails,
+#diversity-date-wrapper,
+#routing-wrapper {
     display: none;
 }
 
@@ -118,11 +121,6 @@ label {
     font-weight: bold;
 }
 
-/* supplier extender form */
-/* #supplier-extender-section, */
-/* #freelancer-section { */
-/* border: 1px solid #89dce9; */
-/* } */
 
 /* // remove margins from these sections will realign inputs of nested section */
 #freelancer-section,
@@ -135,6 +133,30 @@ label {
 table td {
     border: solid 1px #054861;
 }
+
+#user-details-section>div:nth-child(1)>div:nth-child(1)>div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typeahead menu */
+
+div.tt-menu {
+    background-color: #e5fafd;
+}
+
+div.tt-suggestion {
+    padding: 1em;
+}
+
+div.tt-suggestion:nth-child(odd) {
+    background-color: rgb(236, 242, 247);
+}
+
+div.tt-suggestion:hover {
+    background-color: #87d7e4;
+}
+
 
 #employeeDetails tr:nth-child(odd) {
     background-color: #e5fafd;
